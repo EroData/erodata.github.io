@@ -16,15 +16,15 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习，因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭">
+  <meta name="description" content="关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习。因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo和Github搭建公开文档（姑且称之为博客吧）">
 <meta property="og:url" content="http://example.com/2021/10/30/Hexo%E5%92%8CGithub%E6%90%AD%E5%BB%BA%E5%85%AC%E5%BC%80%E6%96%87%E6%A1%A3%EF%BC%88%E5%A7%91%E4%B8%94%E7%A7%B0%E4%B9%8B%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%90%A7%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习，因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭">
+<meta property="og:description" content="关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习。因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-30T15:19:23.000Z">
-<meta property="article:modified_time" content="2021-10-30T16:01:03.258Z">
+<meta property="article:modified_time" content="2021-10-30T16:07:38.449Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -195,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      1.5k 字
     </span>
   
 
@@ -204,7 +204,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      5 分钟
     </span>
   
 
@@ -236,11 +236,11 @@
             <h1 style="display: none">Hexo和Github搭建公开文档（姑且称之为博客吧）</h1>
             
             <div class="markdown-body">
-              <p>关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习，因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭建的过程。</p>
+              <p>关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习。因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭建的过程。</p>
 <h3 id="在Github上创建一个reposity"><a href="#在Github上创建一个reposity" class="headerlink" title="在Github上创建一个reposity"></a>在Github上创建一个reposity</h3><p>reposity是一个项目仓库，就是我们平时fork的项目，简单说就是个高级点的文件夹</p>
 <p>注意以下几个点：</p>
 <ol>
-<li><p>一定是Public，才能被访问</p>
+<li><p>一定是Public，后面才能被公网上访问</p>
 </li>
 <li><p>创建完后，注意在setting中设置一下，才能使用username.github.io访问这个reposity</p>
 </li>
@@ -274,12 +274,17 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo -s<br></code></pre></td></tr></table></figure>
 <p>然后在浏览器访问返回的链接</p>
 <ol start="3">
+<li>配置本地git账户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config -l<br>$ git config --global user.name &lt;github account username&gt;<br>$ git config --global user.emial &lt;github account email&gt;<br></code></pre></td></tr></table></figure>
+<p>关于git，后面有可能遇到email和密码不能登陆的问题，问题不大，遇到了多百度，也可以在下面留言。这里主要是github对用户email公开的隐私问题以及密码登陆的安全性问题的限制。</p>
+<ol start="4">
 <li>链接本地文件和远程仓库<br>首先修改_config.yml文件，设定为自己reposity链接和branch分支。这里注意branch分支，github后来更改为mian了，不再是master。</li>
 </ol>
 <p>然后执行下述命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo g -d<br></code></pre></td></tr></table></figure>
 <p>该命令过后，就相当于git push到了远程仓库。但是需要github反应一会，也可能是浏览器的页面缓存还没有失效，需要等待一会才能看到新的页面。</p>
-<ol start="4">
+<ol start="5">
 <li>创建新页面</li>
 </ol>
 <p>具体可以参考hexo官方手册</p>
