@@ -24,7 +24,7 @@
 <meta property="og:description" content="关于创建自己的博客，本科时就使用服务器和wordpress构建过好多次，无奈维护起来过于复杂，很多时候没有写文章的时间还不如维护的时间多。这次心血来潮，也明白了凡事由浅入深，写博客更主要的目的还是想整理一些系统的思考、学习。因此选择了维护和搭建更简单的github+hexo的方案。虽然是静态页面，但是后端通过markdown书写的方式，十分方便自己做一些笔记用。废话不多说，接下来就简单介绍下本次搭">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-30T15:19:23.000Z">
-<meta property="article:modified_time" content="2021-10-31T08:59:09.224Z">
+<meta property="article:modified_time" content="2021-10-31T09:03:04.016Z">
 <meta property="article:author" content="EroData">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
@@ -283,59 +283,49 @@
 <li>(可跳过)设定npm源，不然后面npm install很慢</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol>
 <li>创建一个Blog文件夹</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ mkdir Blog<br>$ <span class="hljs-built_in">cd</span> Blog<br>$ hexo init<br>$ npm install<br></code></pre></td></tr></table></figure>
 <p>结束后，能够看到Blog下面多了一堆文档</p>
-<ol start="2">
+<ol>
 <li>本地生成页面查看</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo -s<br></code></pre></td></tr></table></figure>
 <p>然后在浏览器访问返回的链接</p>
-<ol start="3">
+<ol>
 <li>配置本地git账户</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config -l<br>$ git config --global user.name &lt;github account username&gt;<br>$ git config --global user.emial &lt;github account email&gt;<br></code></pre></td></tr></table></figure>
 <p>关于git，后面有可能遇到email和密码不能登陆的问题，问题不大，遇到了多百度，也可以在下面留言。这里主要是github对用户email公开的隐私问题以及密码登陆的安全性问题的限制。</p>
-<ol start="4">
+<ol>
 <li>链接本地文件和远程仓库</li>
 </ol>
 <p>首先修改_config.yml文件，设定为自己reposity链接和branch分支。这里注意branch分支，github后来更改为mian了，不再是master。</p>
-<p>然后执行下述命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo g -d<br></code></pre></td></tr></table></figure>
-<p>该命令过后，就相当于git push到了远程仓库。但是需要github反应一会，也可能是浏览器的页面缓存还没有失效，需要等待一会才能看到新的页面。</p>
-<ol start="5">
+<p>然后执行下述命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo g -d<br></code></pre></td></tr></table></figure><br>该命令过后，就相当于git push到了远程仓库。但是需要github反应一会，也可能是浏览器的页面缓存还没有失效，需要等待一会才能看到新的页面。</p>
+<ol>
 <li>创建新页面</li>
 </ol>
-<p>具体可以参考hexo官方手册</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new [layout] &lt;title&gt;<br></code></pre></td></tr></table></figure>
-
-<ol start="6">
+<p>具体可以参考hexo官方手册<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new [layout] &lt;title&gt;<br></code></pre></td></tr></table></figure></p>
+<ol>
 <li>生成器</li>
 </ol>
 <ul>
 <li>生成文件</li>
 </ul>
-<p>使用 Hexo 生成静态文件快速而且简单。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<ol start="7">
+<p>使用 Hexo 生成静态文件快速而且简单。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure></p>
+<ol>
 <li>valine邮件提醒测试</li>
 </ol>
-<p>主要参考链接[^6]。所谓邮件提醒，就是后台收到评论后，登陆一个邮箱发送通知给作者。因此需要一个发送邮箱，一个接收邮箱。发送邮箱需要提供密码，为了安全起见，我使用的是QQ邮箱向163邮箱通知。其中，QQ邮箱是我开的小号。最后，云引擎并不需要绑定一个域名，我测试也是成功的。</p>
+<p>主要参考链接<sup><a href="#fn_6" id="reffn_6">6</a></sup>。所谓邮件提醒，就是后台收到评论后，登陆一个邮箱发送通知给作者。因此需要一个发送邮箱，一个接收邮箱。发送邮箱需要提供密码，为了安全起见，我使用的是QQ邮箱向163邮箱通知。其中，QQ邮箱是我开的小号。最后，云引擎并不需要绑定一个域名，我测试也是成功的。</p>
 <ul>
 <li>监视文件变动</li>
 </ul>
-<p>Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate --watch<br></code></pre></td></tr></table></figure>
-
+<p>Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate --watch<br></code></pre></td></tr></table></figure></p>
 <ul>
 <li>完成后部署</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate --deploy <span class="hljs-comment"># 也可以简写乘 hexo g -d</span><br>(或)$ hexo deploy --generate <span class="hljs-comment"># 简写为hexo d -g</span><br></code></pre></td></tr></table></figure>
-
 <h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><ol>
 <li><p>Latex数学公式 测试<br>$ E=mc^2 $<br>$ \frac{\partial P(x, y)}{\partial x} = e^y\pi$</p>
 </li>
@@ -354,16 +344,17 @@ Class01 : size()
 Class01 : int chimp
 Class01 : int gorilla
 Class08 &lt;--&gt; C2: Cool label
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>[^1]. <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1at4y1D7rr?from=search&seid=9483946196476379073&spm_id_from=333.337.0.0">hexo搭建个人博客</a></p>
-<p>[^2]. <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">hexo官方手册</a></p>
-<p>[^3]. <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid Github</a></p>
-<p>[^4]. <a target="_blank" rel="noopener" href="https://valine.js.org/hexo.html">留言功能 Valine</a></p>
-<p>[^5]. <a target="_blank" rel="noopener" href="https://hexo.io/themes/">更多hexo主题</a></p>
-<p>[^6]. <a target="_blank" rel="noopener" href="https://dreamhomes.top/posts/202102021138/">valine评论邮件提醒</a></p>
-<p>[^7]. <a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/footnotes.html">MarkDown官方手册</a></p>
-<p>[^8]. <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/fluid-write/">Fluid作者的example博客</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><sup><a href="#fn_1" id="reffn_1">1</a></sup>. <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1at4y1D7rr?from=search&amp;seid=9483946196476379073&amp;spm_id_from=333.337.0.0">hexo搭建个人博客</a></p>
+<p><sup><a href="#fn_2" id="reffn_2">2</a></sup>. <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">hexo官方手册</a></p>
+<p><sup><a href="#fn_3" id="reffn_3">3</a></sup>. <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid Github</a></p>
+<p><sup><a href="#fn_4" id="reffn_4">4</a></sup>. <a target="_blank" rel="noopener" href="https://valine.js.org/hexo.html">留言功能 Valine</a></p>
+<p><sup><a href="#fn_5" id="reffn_5">5</a></sup>. <a target="_blank" rel="noopener" href="https://hexo.io/themes/">更多hexo主题</a></p>
+<p><sup><a href="#fn_6" id="reffn_6">6</a></sup>. <a target="_blank" rel="noopener" href="https://dreamhomes.top/posts/202102021138/">valine评论邮件提醒</a></p>
+<p><sup><a href="#fn_7" id="reffn_7">7</a></sup>. <a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/footnotes.html">MarkDown官方手册</a></p>
+<p><sup><a href="#fn_8" id="reffn_8">8</a></sup>. <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/fluid-write/">Fluid作者的example博客</a></p>
 
             </div>
             <hr>
@@ -600,6 +591,48 @@ Class08 &lt;--&gt; C2: Cool label
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
 
 
 
