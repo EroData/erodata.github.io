@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="more systematic content">
+  <meta name="author" content="EroData">
+  <meta name="keywords" content="">
+  <meta name="description" content="背景KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Leskov">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OGB-LSC KDD Cup 2021">
+<meta property="og:url" content="http://example.com/OGB-LSC-KDD-Cup-2021/index.html">
+<meta property="og:site_name" content="EroData&#39;s Blog">
+<meta property="og:description" content="背景KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Leskov">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-10T07:00:25.000Z">
+<meta property="article:modified_time" content="2021-11-10T08:17:13.439Z">
+<meta property="article:author" content="EroData">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>OGB-LSC KDD Cup 2021 - EroData&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c0e9703dc174377fe9ea24209cd9c14d","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"jq7IuP2dyNJUHD5VkKLLIsnY-gzGzoHsz","app_key":"LjNqGDiTUBMTUtxUvehjNODl","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>EroData</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="OGB-LSC KDD Cup 2021">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。<br>今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Leskovec 教授领导 Open Graph Benchmark（OGB）团队合作，联合举办第一届 OGB Large-Scale Challenge，共有500余个来自全球各地的队伍参赛。</p>
+<h2 id="KDD-Cup-2021"><a href="#KDD-Cup-2021" class="headerlink" title="KDD Cup 2021"></a>KDD Cup 2021</h2><p>KDD Cup 2021分为三个赛道：MAG240M-LSC track, WikiKG90M-LSC track, PCQM4M-LSC track。其中MAG240M-LSC比赛使用了来自Microsoft Academic Graph的学术异质图，其中有三类关系：cites(between 2 paper nodes), writes(between author node and paper node), and affiliated with(between author node and instutition node)。涉及总共121M篇论文，122M个作者，26K个机构。<br>比赛中使用至2018年之前的论文作为训练集，2019年作为验证集，2020年作为测试集。<br><strong> ps. </strong> </p>
+<ol>
+<li>由于自己在准备的比赛和node classification相关，故本文主要整理MAG240M-LSC的成果。</li>
+<li>相比于直接看论文，这些比赛中使用的方法往往是真正前沿且可复现的方法。一路看过来，其论文更加言简意赅，并且开源所有代码。无论是初学者，还是业内人士都能快速捕获最新进展。</li>
+</ol>
+<h2 id="Winners"><a href="#Winners" class="headerlink" title="Winners"></a>Winners</h2><h3 id="1st-place-BD-PGL"><a href="#1st-place-BD-PGL" class="headerlink" title="1st place: BD-PGL"></a>1st place: BD-PGL</h3><ul>
+<li><strong> Team members:</strong> Yunsheng Shi (Baidu), Zhengjie Huang (Baidu), Weibin Li (Baidu), Weiyue Su (Baidu), Shikun Feng (Baidu)</li>
+<li><strong> Method: </strong> R-UNIMP</li>
+<li><strong> Test Accuracy: </strong> 0.7549</li>
+</ul>
+<h3 id="2nd-place-Academic"><a href="#2nd-place-Academic" class="headerlink" title="2nd place: Academic"></a>2nd place: Academic</h3><ul>
+<li><strong> Team members:</strong> Petar Velickovic (DeepMind), Peter Battaglia (DeepMind), Jonathan Godwin (DeepMind), Alvaro Sanchez (DeepMind), David Budden (DeepMind), Shantanu Thakoor (DeepMind), Jacklynn Stott (DeepMind), Ravichandra Addanki (DeepMind), Thomas Keck (DeepMind), Andreea Deac (DeepMind)</li>
+<li><strong> Method: </strong> MPNN Ensemble with BGRL fine-tuning</li>
+<li><strong> Test Accuracy: </strong> 0.7519</li>
+</ul>
+<h3 id="3rd-place-Synerise-AI"><a href="#3rd-place-Synerise-AI" class="headerlink" title="3rd place: Synerise AI"></a>3rd place: Synerise AI</h3><ul>
+<li><strong> Team members:</strong> Michal Daniluk (Synerise), Jacek Dabrowski (Synerise), Konrad Goluchowski (Synerise), Barbara Rychalska (Warsaw University of Technology/Synerise)</li>
+<li><strong> Method: </strong> Cleora + EMDE</li>
+<li><strong> Test Accuracy: </strong> 0.7460</li>
+</ul>
+<h2 id="Runner-ups"><a href="#Runner-ups" class="headerlink" title="Runner-ups"></a>Runner-ups</h2><h3 id="4th-place-Topology-mag"><a href="#4th-place-Topology-mag" class="headerlink" title="4th place: Topology_mag"></a>4th place: Topology_mag</h3><ul>
+<li><strong> Team members:</strong> Qiuying Peng (OPPO Research), Wencai Cao (OPPO Research), Zheng Pan (OPPO Research)</li>
+<li><strong> Method: </strong> MPLP + finetune (40 ensemble)</li>
+<li><strong> Test Accuracy: </strong> 0.7447</li>
+</ul>
+<h3 id="5th-place-passages"><a href="#5th-place-passages" class="headerlink" title="5th place: passages"></a>5th place: passages</h3><ul>
+<li><strong> Team members:</strong> Bole Ai (Nanjing University), Xiang Long (Beijing University of Posts and Telecommunications), Kaiyuan Li (Beijing University of Posts and Telecommunications), Quan Lin (Huazhong University of Science and Technology), Xiaofan Liu (Beijing University of Posts and Telecommunications), Pengfei Wang (Beijing University of Posts and Telecommunications), Mingdao Wang (Beijing University of Posts and Telecommunications), Zhichao Feng (Beijing University of Posts and Telecommunications), Kun Zhao (Nanjing University)</li>
+<li><strong> Method: </strong> SGC + R-GAT + Finetune</li>
+<li><strong> Test Accuracy: </strong> 0.7381</li>
+</ul>
+<h3 id="6th-place-DeeperBiggerBetter"><a href="#6th-place-DeeperBiggerBetter" class="headerlink" title="6th place: DeeperBiggerBetter"></a>6th place: DeeperBiggerBetter</h3><ul>
+<li><strong> Team members:</strong> Guohao Li (KAUST), Hesham Mostafa (Intel Corporation), Jesus Alejandro Zarzar Torano (KAUST), Sami Abu-El-Haija (USC), Marcel Nassar (Intel Labs), Daniel Cummings (Intel Corporation), Sohil Shah (Intel Corporation), Matthias Mueller (Intel Labs), Bernard Ghanem (KAUST)</li>
+<li><strong> Method: </strong> GNN180M</li>
+<li><strong> Test Accuracy: </strong> 0.7353</li>
+</ul>
+
+
+  
+</article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c0e9703dc174377fe9ea24209cd9c14d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
