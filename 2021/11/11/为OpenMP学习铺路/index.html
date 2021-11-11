@@ -16,20 +16,23 @@
   <meta name="description" content="more systematic content">
   <meta name="author" content="EroData">
   <meta name="keywords" content="">
-  <meta name="description" content="背景KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。 今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Lesko">
+  <meta name="description" content="OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。 中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。 不同的并行机体系结构以及通信机制适用不用的并行编程模型主要有两类：  SMP: 共享内存并行机 DSM: 分布共享存储并行机  访存模型 多处理器（单个地址空间）， NUMA也是单个地址空间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OGB-LSC KDD Cup 2021">
-<meta property="og:url" content="http://example.com/2021/11/10/OGB-LSC-KDD-Cup-2021/index.html">
+<meta property="og:title" content="为OpenMP学习铺路">
+<meta property="og:url" content="http://example.com/2021/11/11/%E4%B8%BAOpenMP%E5%AD%A6%E4%B9%A0%E9%93%BA%E8%B7%AF/index.html">
 <meta property="og:site_name" content="EroData&#39;s Blog">
-<meta property="og:description" content="背景KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。 今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Lesko">
+<meta property="og:description" content="OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。 中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。 不同的并行机体系结构以及通信机制适用不用的并行编程模型主要有两类：  SMP: 共享内存并行机 DSM: 分布共享存储并行机  访存模型 多处理器（单个地址空间）， NUMA也是单个地址空间">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-10T08:33:00.000Z">
-<meta property="article:modified_time" content="2021-11-10T08:46:40.554Z">
+<meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png">
+<meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png">
+<meta property="article:published_time" content="2021-11-11T08:04:12.000Z">
+<meta property="article:modified_time" content="2021-11-11T08:23:32.979Z">
 <meta property="article:author" content="EroData">
-<meta property="article:tag" content="图神经网络">
+<meta property="article:tag" content="并行编程">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png">
   
-  <title>OGB-LSC KDD Cup 2021 - EroData&#39;s Blog</title>
+  <title>为OpenMP学习铺路 - EroData&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -187,7 +190,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="OGB-LSC KDD Cup 2021">
+            <span class="h2" id="subtitle" title="为OpenMP学习铺路">
               
             </span>
 
@@ -197,8 +200,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-10 16:33" pubdate>
-        2021年11月10日 下午
+      <time datetime="2021-11-11 16:04" pubdate>
+        2021年11月11日 下午
       </time>
     </span>
   
@@ -208,7 +211,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      419 字
     </span>
   
 
@@ -217,7 +220,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      1 分钟
     </span>
   
 
@@ -254,50 +257,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">OGB-LSC KDD Cup 2021</h1>
+            <h1 style="display: none">为OpenMP学习铺路</h1>
             
             <div class="markdown-body">
-              <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>KDD Cup 全称为国际知识发现和数据挖掘竞赛，自1997年开始，由 ACM 协会 SIGKDD 分会每年举办一次，目前是全球数据挖掘领域最有影响力的赛事，其所设比赛题目具有相当高的实际意义和商业价值。多年来，该赛事每年都吸引着众多世界顶级的 AI 研究机构与企业的参与，并且催生了大量的经典比赛和经典算法。</p>
-<p>今年，KDD Cup 2021 首次与斯坦福大学图神经网络权威 Jure Leskovec 教授领导 Open Graph Benchmark（OGB）团队合作，联合举办第一届 OGB Large-Scale Challenge，共有500余个来自全球各地的队伍参赛。</p>
-<h2 id="KDD-Cup-2021"><a href="#KDD-Cup-2021" class="headerlink" title="KDD Cup 2021"></a>KDD Cup 2021</h2><p>KDD Cup 2021分为三个赛道：MAG240M-LSC track, WikiKG90M-LSC track, PCQM4M-LSC track。其中MAG240M-LSC比赛使用了来自Microsoft Academic Graph的学术异质图，其中有三类关系：cites(between 2 paper nodes), writes(between author node and paper node), and affiliated with(between author node and instutition node)。涉及总共121M篇论文，122M个作者，26K个机构。</p>
-<p>比赛中使用至2018年之前的论文作为训练集，2019年作为验证集，2020年作为测试集。</p>
-<p><strong>ps.</strong> </p>
-<ol>
-<li><p>由于自己在准备的比赛和node classification相关，故本文主要整理MAG240M-LSC的成果。</p>
-</li>
-<li><p>相比于直接看论文，这些比赛中使用的方法往往是真正前沿且可复现的方法。一路看过来，其论文更加言简意赅，并且开源所有代码。无论是初学者，还是业内人士都能快速捕获最新进展。</p>
-</li>
-</ol>
-<h2 id="Winners"><a href="#Winners" class="headerlink" title="Winners"></a>Winners</h2><h4 id="1st-place-BD-PGL"><a href="#1st-place-BD-PGL" class="headerlink" title="1st place: BD-PGL"></a>1st place: BD-PGL</h4><ul>
-<li><strong>Team members:</strong> Yunsheng Shi (Baidu), Zhengjie Huang (Baidu), Weibin Li (Baidu), Weiyue Su (Baidu), Shikun Feng (Baidu)</li>
-<li><strong>Method:</strong> R-UNIMP</li>
-<li><strong>Test Accuracy:</strong> 0.7549</li>
+              <p>OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。</p>
+<p>中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。</p>
+<h4 id="不同的并行机体系结构以及通信机制适用不用的并行编程模型"><a href="#不同的并行机体系结构以及通信机制适用不用的并行编程模型" class="headerlink" title="不同的并行机体系结构以及通信机制适用不用的并行编程模型"></a>不同的并行机体系结构以及通信机制适用不用的并行编程模型</h4><p>主要有两类：</p>
+<ul>
+<li>SMP: 共享内存并行机</li>
+<li>DSM: 分布共享存储并行机<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png" srcset="/img/loading.gif" lazyload alt="20211111161711"></li>
 </ul>
-<h4 id="2nd-place-Academic"><a href="#2nd-place-Academic" class="headerlink" title="2nd place: Academic"></a>2nd place: Academic</h4><ul>
-<li><strong> Team members:</strong> Petar Velickovic (DeepMind), Peter Battaglia (DeepMind), Jonathan Godwin (DeepMind), Alvaro Sanchez (DeepMind), David Budden (DeepMind), Shantanu Thakoor (DeepMind), Jacklynn Stott (DeepMind), Ravichandra Addanki (DeepMind), Thomas Keck (DeepMind), Andreea Deac (DeepMind)</li>
-<li><strong> Method: </strong> MPNN Ensemble with BGRL fine-tuning</li>
-<li><strong> Test Accuracy: </strong> 0.7519</li>
+<h4 id="访存模型"><a href="#访存模型" class="headerlink" title="访存模型"></a>访存模型</h4><ul>
+<li>多处理器（单个地址空间）， NUMA也是单个地址空间</li>
+<li>多计算机（多个地址空间），通过网络通信连接<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png" srcset="/img/loading.gif" lazyload alt="20211111162022"></li>
 </ul>
-<h4 id="3rd-place-Synerise-AI"><a href="#3rd-place-Synerise-AI" class="headerlink" title="3rd place: Synerise AI"></a>3rd place: Synerise AI</h4><ul>
-<li><strong> Team members:</strong> Michal Daniluk (Synerise), Jacek Dabrowski (Synerise), Konrad Goluchowski (Synerise), Barbara Rychalska (Warsaw University of Technology/Synerise)</li>
-<li><strong> Method: </strong> Cleora + EMDE</li>
-<li><strong> Test Accuracy: </strong> 0.7460</li>
-</ul>
-<h2 id="Runner-ups"><a href="#Runner-ups" class="headerlink" title="Runner-ups"></a>Runner-ups</h2><h4 id="4th-place-Topology-mag"><a href="#4th-place-Topology-mag" class="headerlink" title="4th place: Topology_mag"></a>4th place: Topology_mag</h4><ul>
-<li><strong>Team members:</strong> Qiuying Peng (OPPO Research), Wencai Cao (OPPO Research), Zheng Pan (OPPO Research)</li>
-<li><strong>Method:</strong> MPLP + finetune (40 ensemble)</li>
-<li><strong>Test Accuracy:</strong> 0.7447</li>
-</ul>
-<h4 id="5th-place-passages"><a href="#5th-place-passages" class="headerlink" title="5th place: passages"></a>5th place: passages</h4><ul>
-<li><strong>Team members:</strong> Bole Ai (Nanjing University), Xiang Long (Beijing University of Posts and Telecommunications), Kaiyuan Li (Beijing University of Posts and Telecommunications), Quan Lin (Huazhong University of Science and Technology), Xiaofan Liu (Beijing University of Posts and Telecommunications), Pengfei Wang (Beijing University of Posts and Telecommunications), Mingdao Wang (Beijing University of Posts and Telecommunications), Zhichao Feng (Beijing University of Posts and Telecommunications), Kun Zhao (Nanjing University)</li>
-<li><strong>Method:</strong> SGC + R-GAT + Finetune</li>
-<li><strong>Test Accuracy:</strong> 0.7381</li>
-</ul>
-<h4 id="6th-place-DeeperBiggerBetter"><a href="#6th-place-DeeperBiggerBetter" class="headerlink" title="6th place: DeeperBiggerBetter"></a>6th place: DeeperBiggerBetter</h4><ul>
-<li><strong>Team members:</strong> Guohao Li (KAUST), Hesham Mostafa (Intel Corporation), Jesus Alejandro Zarzar Torano (KAUST), Sami Abu-El-Haija (USC), Marcel Nassar (Intel Labs), Daniel Cummings (Intel Corporation), Sohil Shah (Intel Corporation), Matthias Mueller (Intel Labs), Bernard Ghanem (KAUST)</li>
-<li><strong>Method:</strong> GNN180M</li>
-<li><strong>Test Accuracy:</strong> 0.7353</li>
-</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote id="fn_1">
+<sup>1</sup>. OpenMP 官方网站：<a target="_blank" rel="noopener" href="https://www.openmp.org/">OpenMp.org</a>。在此可以找到API定义，常见问题，报告，讨论，多媒体，日程，会员应用等<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a target="_blank" rel="noopener" href="https://hpc.llnl.gov/">劳伦斯利弗莫尔国家实验室(Lawrence Livermore National Laboratory, LLNL)</a>,在此搜索OpenMP，可以找到openMP的tutorial<sup><a href="#fn_3" id="reffn_3">3</a></sup><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a target="_blank" rel="noopener" href="https://hpc.llnl.gov/tuts/openMP/#Abstract">OpenMP’s tutorial</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a target="_blank" rel="noopener" href="https://scc.ustc.edu.cn/zlsc/cxyy/200910/W020121113517997951933.pdf">OpenMP并行编程</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
 
             </div>
             <hr>
@@ -307,9 +292,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">图神经网络</a>
+                      <a class="hover-with-bg" href="/categories/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/">并行编程</a>
                     
                   </div>
                 
@@ -317,7 +300,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">图神经网络</a>
+                      <a class="hover-with-bg" href="/tags/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/">并行编程</a>
                     
                   </div>
                 
@@ -334,18 +317,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/11/%E4%B8%BAOpenMP%E5%AD%A6%E4%B9%A0%E9%93%BA%E8%B7%AF/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为OpenMP学习铺路</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/08/Blog%E8%BF%81%E7%A7%BB/">
-                        <span class="hidden-mobile">Blog迁移</span>
+                      <a href="/2021/11/10/OGB-LSC-KDD-Cup-2021/">
+                        <span class="hidden-mobile">OGB-LSC KDD Cup 2021</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
