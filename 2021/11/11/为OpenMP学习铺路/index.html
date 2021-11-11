@@ -23,16 +23,15 @@
 <meta property="og:site_name" content="EroData&#39;s Blog">
 <meta property="og:description" content="OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。 中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。 连接并行的硬件基础并行的基础不再是单核上虚拟多线程，利用计算和io的交替充分利用cpu的时间片，而是现代多cpu&#x2F;多core&#x2F;超线程技术下的真并行方案。由于现代并行计算任务往往伴随大数据，因">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111163714.png">
-<meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111163745.png">
+<meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111164629.png">
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png">
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png">
 <meta property="article:published_time" content="2021-11-11T08:04:12.000Z">
-<meta property="article:modified_time" content="2021-11-11T08:45:07.366Z">
+<meta property="article:modified_time" content="2021-11-11T08:46:31.785Z">
 <meta property="article:author" content="EroData">
 <meta property="article:tag" content="并行编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111163714.png">
+<meta name="twitter:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111164629.png">
   
   <title>为OpenMP学习铺路 - EroData&#39;s Blog</title>
 
@@ -213,7 +212,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      623 字
+      612 字
     </span>
   
 
@@ -265,22 +264,7 @@
               <p>OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。</p>
 <p>中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。</p>
 <h2 id="连接并行的硬件基础"><a href="#连接并行的硬件基础" class="headerlink" title="连接并行的硬件基础"></a>连接并行的硬件基础</h2><p>并行的基础不再是单核上虚拟多线程，利用计算和io的交替充分利用cpu的时间片，而是现代多cpu/多core/超线程技术下的真并行方案。由于现代并行计算任务往往伴随大数据，因此即使计算任务划分开，每个thread上仍然会有访问memory的冲突。NUMA结构解决了早期SMP体系中前端总线FSB上的瓶颈问题。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">SMP结构</th>
-<th style="text-align:center">NUMA结构</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111163714.png" srcset="/img/loading.gif" lazyload alt="20211111163714"></td>
-<td style="text-align:center"><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111163745.png" srcset="/img/loading.gif" lazyload alt="20211111163745"></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111164629.png" srcset="/img/loading.gif" lazyload alt="20211111164629"></p>
 <h4 id="不同的并行机体系结构以及通信机制适用不用的并行编程模型"><a href="#不同的并行机体系结构以及通信机制适用不用的并行编程模型" class="headerlink" title="不同的并行机体系结构以及通信机制适用不用的并行编程模型"></a>不同的并行机体系结构以及通信机制适用不用的并行编程模型</h4><p>主要有两类：</p>
 <ul>
 <li>SMP: 共享内存并行机</li>
