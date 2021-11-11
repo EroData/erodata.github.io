@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png">
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png">
 <meta property="article:published_time" content="2021-11-11T08:04:12.000Z">
-<meta property="article:modified_time" content="2021-11-11T08:46:31.785Z">
+<meta property="article:modified_time" content="2021-11-11T08:54:45.594Z">
 <meta property="article:author" content="EroData">
 <meta property="article:tag" content="并行编程">
 <meta name="twitter:card" content="summary_large_image">
@@ -264,15 +264,15 @@
               <p>OpenMP是一种并行程序设计语言，调用多个内核完成任务。根据并行机体系结构的不同、访存模型的不同，并行程序设计模型也有所不同。</p>
 <p>中科院计算机网络信息中心（超级计算中心）提供了一份OpenMP并行编程的分享。</p>
 <h2 id="连接并行的硬件基础"><a href="#连接并行的硬件基础" class="headerlink" title="连接并行的硬件基础"></a>连接并行的硬件基础</h2><p>并行的基础不再是单核上虚拟多线程，利用计算和io的交替充分利用cpu的时间片，而是现代多cpu/多core/超线程技术下的真并行方案。由于现代并行计算任务往往伴随大数据，因此即使计算任务划分开，每个thread上仍然会有访问memory的冲突。NUMA结构解决了早期SMP体系中前端总线FSB上的瓶颈问题。</p>
-<p><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111164629.png" srcset="/img/loading.gif" lazyload alt="20211111164629"></p>
+<p><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111164629.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="不同的并行机体系结构以及通信机制适用不用的并行编程模型"><a href="#不同的并行机体系结构以及通信机制适用不用的并行编程模型" class="headerlink" title="不同的并行机体系结构以及通信机制适用不用的并行编程模型"></a>不同的并行机体系结构以及通信机制适用不用的并行编程模型</h4><p>主要有两类：</p>
 <ul>
 <li>SMP: 共享内存并行机</li>
-<li>DSM: 分布共享存储并行机<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png" srcset="/img/loading.gif" lazyload alt="20211111161711"></li>
+<li>DSM: 分布共享存储并行机<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111161711.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="访存模型"><a href="#访存模型" class="headerlink" title="访存模型"></a>访存模型</h4><ul>
 <li>多处理器（单个地址空间）， NUMA也是单个地址空间</li>
-<li>多计算机（多个地址空间），通过网络通信连接<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png" srcset="/img/loading.gif" lazyload alt="20211111162022"></li>
+<li>多计算机（多个地址空间），通过网络通信连接<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211111162022.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <h4 id="OpenMP-API"><a href="#OpenMP-API" class="headerlink" title="OpenMP API"></a>OpenMP API</h4><p><a target="_blank" rel="noopener" href="https://www.openmp.org/wp-content/uploads/OpenMPRefCard-5.1-web.pdf">OpenMP 5.1 API cheatpaper</a></p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote id="fn_1">
