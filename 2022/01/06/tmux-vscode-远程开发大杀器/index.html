@@ -16,17 +16,17 @@
   <meta name="description" content="more systematic content">
   <meta name="author" content="EroData">
   <meta name="keywords" content="">
-  <meta name="description" content="随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。 自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而stop的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。 tmux算是screen进阶版本，功能">
+  <meta name="description" content="随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。 自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而shut down的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。 tmux算是screen进阶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmux-vscode-远程开发大杀器">
 <meta property="og:url" content="http://example.com/2022/01/06/tmux-vscode-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8/index.html">
 <meta property="og:site_name" content="EroData&#39;s Blog">
-<meta property="og:description" content="随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。 自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而stop的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。 tmux算是screen进阶版本，功能">
+<meta property="og:description" content="随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。 自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而shut down的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。 tmux算是screen进阶">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211122155826.png">
 <meta property="og:image" content="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211122155424.png">
 <meta property="article:published_time" content="2022-01-06T12:37:58.000Z">
-<meta property="article:modified_time" content="2022-01-06T12:47:16.415Z">
+<meta property="article:modified_time" content="2022-01-06T12:50:56.415Z">
 <meta property="article:author" content="EroData">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="tmux">
@@ -262,8 +262,8 @@
             
             <div class="markdown-body">
               <p>随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。<br>
-自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而stop的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。</p>
-<p>tmux算是screen进阶版本，功能更加强大，也更有调理。相比于screen，tmux要记住的命令当然也多，但是用不到的可以先不管，慢慢来！<br>
+自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而shut down的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。</p>
+<p>tmux算是screen进阶版本，功能更加强大，也更有条理。相比于screen，tmux要记住的命令当然也多，但是用不到的可以先不管，慢慢来！<br>
 首先，我们先理清tmux使用过程中的一些概念，这有助于我们命令每一个窗口都意味着什么。<br>
 在运行tmux后，会有启动一个tmux server来管理tmux的sessions,注意</p>
 <ol>
