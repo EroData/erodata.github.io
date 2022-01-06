@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>tmux-vscode-远程开发大杀器</title>
+    <link href="/2022/01/06/tmux-vscode-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8/"/>
+    <url>/2022/01/06/tmux-vscode-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>随着实习和项目经历的丰富，对于远程连接+远程编程逐渐熟练。远程连接意味着计算和存储资源都在远端，意味着在服务器上进行开发。好的工作工具会让开发事半功倍。<br>自己最早接触的是screen，一般只能保存部分工作现场，解决最早电脑断网，希望服务器上的命令不会跟随ssh断开而stop的问题。screen的能力还是有限的，特别是要开多个session的时候，感觉非常乱。</p><p>tmux算是screen进阶版本，功能更加强大，也更有调理。相比于screen，tmux要记住的命令当然也多，但是用不到的可以先不管，慢慢来！<br>首先，我们先理清tmux使用过程中的一些概念，这有助于我们命令每一个窗口都意味着什么。<br>在运行tmux后，会有启动一个tmux server来管理tmux的sessions,注意</p><ol><li>一个机器上只开了一个tmux server管理一切；</li><li>一个tmux server管理多个session，每个session我们都会赋予他一个名字</li><li>一个tmux session可以有多个window,类似终端上的多个标签页</li><li>一个windows上可以有多个pane，即分屏<br>session可翻译为“会话”，window可翻译为“窗口”，pane可翻译为“窗格”</li></ol><h2 id="使用">使用</h2><h3 id="快速上手">快速上手</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ tmux new-session -s code // 创建一个名为code的终端<br>$ tmux ls // 查看目前开启的session<br>// ctrl-b d // 退出但是不删除code session, 也可以直接关闭xshell。这个突然断电关机也不怕，保命神器！<br>$ tmux a -t code // 重新连接上去！<br></code></pre></td></tr></table></figure><h3 id="tmux">tmux</h3><ol><li>关于 session</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ tmux new-session -s code // 创建一个session<br>// ctrl-b d // 退出但是不删除这个session<br>// ctrl-b :kill-session // 删除当前session<br>// ctrl-b :kill-server // 停止server，即删除所有session<br>$ tmux a -t code // 重新连上ssession<br></code></pre></td></tr></table></figure><ol start="2"><li><p>关于复制<br>xshell+tmux，需要先按住shift，然后选中文档再右键，才有复制和粘贴的选项</p></li><li><p>关于pane</p></li></ol><ul><li>xshell上可以通过右键的方式选择vertical/horizontal split的方式生成其他pane；</li><li>再通过左键点击，进入不同pane输入命令；</li><li>通过拖动边界还可以调整pane的大小<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211122155826.png" alt=""></li></ul><h3 id="vscode">vscode</h3><p>vscode上使用remote-SSH工具配置HostName, Port, User即可远程连接进行开发。如果有跳板机，可以通过下图的<code>ProxyCommand</code>进行跳转。<br><img src="https://johnson-pic-host.oss-cn-beijing.aliyuncs.com/blog/images/20211122155424.png" alt=""></p><h2 id="tmux-技巧">tmux 技巧</h2><h3 id="tmux的command-prompt">tmux的command-prompt</h3><p>tmux的快捷键和命令是对应的，我们也可以使用键入命令来实现某个功能</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">// 按下ctrl-b : 就可以进入command-prompt窗口<br>// 然后输入对应命令就可以了<br></code></pre></td></tr></table></figure><h3 id="tmux-快捷键的帮助">tmux 快捷键的帮助</h3><p>tmux的每个快捷键由send-prefix和bind-key组成<br>send-prefix 是固定的，就是 ctrl-b<br>bing-key是每个功能的关键词，想不起来的时候，可以通过如下命令查看</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">// 按下ctrl-b ?<br></code></pre></td></tr></table></figure><h3 id="鼠标模式">鼠标模式</h3><p>打开鼠标模式，则可以通过鼠标拖动pane的边框；当然, 鼠标模式下的拷贝粘贴需要按住shift</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ctrl+b : <span class="hljs-built_in">set</span> mouse-mode on // 老版本打开鼠标模式<br>$ ctrl+b : <span class="hljs-built_in">set</span> -g mouse on // 新版本打开鼠标模式<br></code></pre></td></tr></table></figure><p>鼠标模式下的快捷特性如下：</p><ul><li>开启用鼠标拖动调节pane的大小（拖动位置是pane之间的分隔线）</li><li>开启用鼠标点击pane来激活该pane</li><li>开启用鼠标点击来切换活动window（点击位置是状态栏的窗口名称）</li><li>开启window/pane里面的鼠标支持（也即可以用鼠标滚轮回滚显示窗口内容，此时还可以用鼠标选取文本）</li></ul><h3 id="重新绑定-send-prefix">重新绑定 send-prefix</h3><p>也可以更换快捷键的tmux-prefix中的 ctrl-b, 这个也在tmux的配置文件中(.tmux.conf)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">unbind C-b<br><span class="hljs-built_in">set</span> -g prefix C-a<br></code></pre></td></tr></table></figure><h3 id="tmux-显示时间和快速切换快捷键">tmux 显示时间和快速切换快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ 按下 ctrl-b t, 会在当前window的当前pane显示当前时间<br>$ 按下 ctrl-b q, 每一个pane都会出现一个数字，按下想要切换的pane数字，就可以切换到对应的pane<br>// 关于切换pane，实际上用鼠标左键直接点击也可以..而且右键也有很多功能，如纵切window为两个pane<br><br><br></code></pre></td></tr></table></figure><h2 id="参考">参考</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>编程</tag>
+      
+      <tag>tmux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>tmux——比screen更好用</title>
     <link href="/2022/01/06/tmux%E2%80%94%E2%80%94%E6%AF%94screen%E6%9B%B4%E5%A5%BD%E7%94%A8/"/>
     <url>/2022/01/06/tmux%E2%80%94%E2%80%94%E6%AF%94screen%E6%9B%B4%E5%A5%BD%E7%94%A8/</url>
